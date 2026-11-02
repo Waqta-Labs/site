@@ -3,16 +3,20 @@ const translations = {
     skipLink: "Ir al contenido principal",
     navHome: "Inicio",
     navSolution: "Solución IA",
+    navHowItWorks: "Cómo funciona",
+    navOrganizations: "Organizaciones",
+    navContact: "Contacto",
     navAuthorities: "Para Autoridades",
     navMobile: "App Móvil",
     navTraceability: "Trazabilidad",
-    commandCenter: "Acceso Centro de Mando",
+    commandCenter: "Ver Centro de Mando",
     heroEyebrow: "IA + Blockchain · Respuesta ante desastres",
     heroLineOne: "Coordinación e",
     heroLineTwo: "Inteligencia Artificial",
     heroLineThree: "al servicio de la respuesta ante desastres humanitarios.",
     heroDescription: "Conectamos la urgencia ciudadana en campo mediante reportes offline-first con tableros de mando inteligente, priorización algorítmica y trazabilidad inmutable por Blockchain.",
     dashboardDemo: "Ver Demo del Dashboard",
+    discoverHowItWorks: "Conocer cómo funciona",
     downloadApp: "Descargar App Móvil (Offline)",
     proofOffline: "Opera sin señal",
     proofExplainable: "IA explicable",
@@ -80,16 +84,17 @@ const translations = {
     deployRegion: "Conoce cómo AuxIA puede adaptarse a la coordinación de emergencias en tu región.",
     requestDeployment: "Solicitar despliegue",
     talkTeam: "Hablar con el equipo",
+    reviewProcess: "Revisar el proceso",
     footerDescription: "Plataforma inteligente para coordinar la respuesta ante desastres y la ayuda humanitaria.",
     product: "Producto",
     resources: "Recursos",
     productDemo: "Demo del producto",
-    siteMap: "Mapa del sitio",
-    systemStatus: "Estado del sistema",
+    siteMap: "Mapa del sitio · próximamente",
+    systemStatus: "Estado del sistema · próximamente",
     legal: "Legal",
-    privacyTerms: "Términos de privacidad",
-    useTerms: "Términos de uso",
-    dataPolicy: "Política de datos",
+    privacyTerms: "Términos de privacidad · próximamente",
+    useTerms: "Términos de uso · próximamente",
+    dataPolicy: "Política de datos · próximamente",
     emergencyContacts: "Contactos de emergencia",
     civilDefense: "Defensa Civil",
     firefighters: "Bomberos",
@@ -105,16 +110,20 @@ const translations = {
     skipLink: "Skip to main content",
     navHome: "Home",
     navSolution: "AI Solution",
+    navHowItWorks: "How it works",
+    navOrganizations: "Organizations",
+    navContact: "Contact",
     navAuthorities: "For Authorities",
     navMobile: "Mobile App",
     navTraceability: "Traceability",
-    commandCenter: "Access Command Center",
+    commandCenter: "View Command Center",
     heroEyebrow: "AI + Blockchain · Disaster response",
     heroLineOne: "Coordination and",
     heroLineTwo: "Artificial Intelligence",
     heroLineThree: "for humanitarian disaster response.",
     heroDescription: "We connect urgent field needs through offline-first reports with intelligent command dashboards, algorithmic prioritization, and immutable Blockchain traceability.",
     dashboardDemo: "View Dashboard Demo",
+    discoverHowItWorks: "See how it works",
     downloadApp: "Download Mobile App (Offline)",
     proofOffline: "Works without signal",
     proofExplainable: "Explainable AI",
@@ -182,16 +191,17 @@ const translations = {
     deployRegion: "Discover how AuxIA can support emergency coordination in your region.",
     requestDeployment: "Request deployment",
     talkTeam: "Talk to the team",
+    reviewProcess: "Review the process",
     footerDescription: "An intelligent platform for coordinating disaster response and humanitarian aid.",
     product: "Product",
     resources: "Resources",
     productDemo: "Product demo",
-    siteMap: "Site map",
-    systemStatus: "System status",
+    siteMap: "Site map · coming soon",
+    systemStatus: "System status · coming soon",
     legal: "Legal",
-    privacyTerms: "Privacy terms",
-    useTerms: "Terms of use",
-    dataPolicy: "Data policy",
+    privacyTerms: "Privacy terms · coming soon",
+    useTerms: "Terms of use · coming soon",
+    dataPolicy: "Data policy · coming soon",
     emergencyContacts: "Emergency contacts",
     civilDefense: "Civil Defense",
     firefighters: "Firefighters",
@@ -278,6 +288,27 @@ navLinks.forEach((link) => {
   link.addEventListener("click", closeMenu);
 });
 
+const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+
+document.querySelectorAll('a[href^="#"]:not(.skip-link)').forEach((link) => {
+  link.addEventListener("click", (event) => {
+    const target = document.querySelector(link.getAttribute("href"));
+    if (!target) return;
+
+    event.preventDefault();
+    const headerOffset = header.offsetHeight + 18;
+    const targetTop = target.id === "inicio"
+      ? 0
+      : target.getBoundingClientRect().top + window.scrollY - headerOffset;
+
+    history.pushState(null, "", link.getAttribute("href"));
+    window.scrollTo({
+      top: Math.max(0, targetTop),
+      behavior: reducedMotion.matches ? "auto" : "smooth"
+    });
+  });
+});
+
 languageButtons.forEach((button) => {
   button.addEventListener("click", () => setLanguage(button.dataset.language));
 });
@@ -326,34 +357,39 @@ if ("IntersectionObserver" in window) {
   revealElements.forEach((element) => element.classList.add("is-visible"));
 }
 
-const observedTargets = [...navLinks]
-  .map((link) => document.querySelector(link.getAttribute("href")))
-  .filter((target, index, targets) => target && targets.indexOf(target) === index);
+const navigationTargets = [...navLinks]
+  .map((link) => ({ link, target: document.querySelector(link.getAttribute("href")) }))
+  .filter(({ target }) => target);
 
-if ("IntersectionObserver" in window) {
-  const sectionObserver = new IntersectionObserver(
-    (entries) => {
-      const visibleEntry = entries
-        .filter((entry) => entry.isIntersecting)
-        .sort((first, second) => second.intersectionRatio - first.intersectionRatio)[0];
+function updateActiveNavigation() {
+  const marker = window.scrollY + header.offsetHeight + 96;
+  let activeLink = navigationTargets[0]?.link;
 
-      if (!visibleEntry) return;
+  navigationTargets.forEach(({ link, target }) => {
+    const targetTop = target.getBoundingClientRect().top + window.scrollY;
+    if (targetTop <= marker) {
+      activeLink = link;
+    }
+  });
 
-      navLinks.forEach((link) => {
-        const isCurrent = link.getAttribute("href") === `#${visibleEntry.target.id}`;
-        link.classList.toggle("is-active", isCurrent);
-        if (isCurrent) {
-          link.setAttribute("aria-current", "page");
-        } else {
-          link.removeAttribute("aria-current");
-        }
-      });
-    },
-    { rootMargin: "-30% 0px -60%", threshold: [0, 0.15, 0.4] }
-  );
+  if (window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 8) {
+    activeLink = navigationTargets.at(-1)?.link;
+  }
 
-  observedTargets.forEach((target) => sectionObserver.observe(target));
+  navLinks.forEach((link) => {
+    const isCurrent = link === activeLink;
+    link.classList.toggle("is-active", isCurrent);
+    if (isCurrent) {
+      link.setAttribute("aria-current", "location");
+    } else {
+      link.removeAttribute("aria-current");
+    }
+  });
 }
+
+window.addEventListener("scroll", updateActiveNavigation, { passive: true });
+window.addEventListener("resize", updateActiveNavigation);
+updateActiveNavigation();
 
 sosButton.addEventListener("click", () => {
   phonePreview.classList.remove("is-triggered");

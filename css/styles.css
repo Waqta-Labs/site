@@ -109,6 +109,16 @@ b {
   background: var(--night);
 }
 
+.hero,
+.modules,
+.workflow,
+.deployment-cta,
+.site-footer,
+.module-card,
+.dashboard-preview {
+  scroll-margin-top: 96px;
+}
+
 .section-dark {
   background: var(--night-deep);
 }
@@ -516,8 +526,8 @@ b {
 .hero h1 {
   max-width: 640px;
   margin-bottom: 22px;
-  font-size: clamp(2.85rem, 5.3vw, 4.95rem);
-  line-height: 1.04;
+  font-size: clamp(2.7rem, 4vw, 3.75rem);
+  line-height: 1.06;
 }
 
 .hero h1 span {
@@ -596,6 +606,13 @@ b {
   border-radius: 16px;
   box-shadow: var(--shadow-panel);
   transform: translateY(-50%);
+  transition: border-color var(--transition), box-shadow var(--transition);
+}
+
+.dashboard-preview:target,
+.module-card:target {
+  border-color: var(--lime);
+  box-shadow: 0 0 0 4px rgba(188, 251, 137, 0.12), var(--shadow-panel);
 }
 
 .preview-header {
@@ -1206,24 +1223,6 @@ b {
   line-height: 1.62;
 }
 
-.module-card > a {
-  display: inline-flex;
-  align-items: center;
-  gap: 7px;
-  margin-top: auto;
-  color: var(--sky);
-  font-size: 0.76rem;
-  font-weight: 750;
-}
-
-.module-card > a span:last-child {
-  transition: transform var(--transition);
-}
-
-.module-card > a:hover span:last-child {
-  transform: translate(3px, -3px);
-}
-
 /* Workflow */
 
 .workflow {
@@ -1498,16 +1497,25 @@ b {
   letter-spacing: 0.02em;
 }
 
-.footer-column a {
+.footer-column a,
+.footer-pending {
   width: fit-content;
   color: #e0f2e8;
   font-size: 0.75rem;
+}
+
+.footer-column a {
   transition: color var(--transition), transform var(--transition);
 }
 
 .footer-column a:hover {
   color: var(--lime);
   transform: translateX(3px);
+}
+
+.footer-pending {
+  color: rgba(224, 242, 232, 0.58);
+  cursor: default;
 }
 
 .emergency-card {
@@ -1609,7 +1617,7 @@ b {
   }
 
   .hero h1 {
-    font-size: clamp(2.65rem, 5.3vw, 4.2rem);
+    font-size: clamp(2.6rem, 4.6vw, 3.6rem);
   }
 
   .dashboard-preview {

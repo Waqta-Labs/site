@@ -15,7 +15,7 @@
   <body>
     <a class="skip-link" href="#main-content" data-i18n="skipLink">Ir al contenido principal</a>
 
-    <header class="site-header" id="inicio">
+    <header class="site-header">
       <div class="container header-inner">
         <a class="brand" href="#inicio" aria-label="AuxIA, inicio">
           <svg class="brand-mark" viewBox="0 0 48 48" aria-hidden="true">
@@ -32,9 +32,9 @@
         <nav class="primary-nav" id="primary-navigation" aria-label="Navegación principal">
           <a class="nav-link is-active" href="#inicio" data-i18n="navHome">Inicio</a>
           <a class="nav-link" href="#solucion" data-i18n="navSolution">Solución IA</a>
-          <a class="nav-link" href="#autoridades" data-i18n="navAuthorities">Para Autoridades</a>
-          <a class="nav-link" href="#app-movil" data-i18n="navMobile">App Móvil</a>
-          <a class="nav-link" href="#trazabilidad" data-i18n="navTraceability">Trazabilidad</a>
+          <a class="nav-link" href="#como-funciona" data-i18n="navHowItWorks">Cómo funciona</a>
+          <a class="nav-link" href="#despliegue" data-i18n="navOrganizations">Organizaciones</a>
+          <a class="nav-link" href="#contacto" data-i18n="navContact">Contacto</a>
         </nav>
 
         <div class="header-actions">
@@ -42,7 +42,7 @@
             <button class="language-button is-active" type="button" data-language="es" aria-pressed="true">ES</button>
             <button class="language-button" type="button" data-language="en" aria-pressed="false">EN</button>
           </div>
-          <a class="button button-lime header-cta" href="#despliegue" data-i18n="commandCenter">Acceso Centro de Mando</a>
+          <a class="button button-lime header-cta" href="#dashboard-demo" data-i18n="commandCenter">Ver Centro de Mando</a>
           <button
             class="menu-toggle"
             type="button"
@@ -59,7 +59,7 @@
     </header>
 
     <main id="main-content">
-      <section class="hero section-shell" aria-labelledby="hero-title">
+      <section class="hero section-shell" id="inicio" aria-labelledby="hero-title">
         <div class="hero-glow hero-glow-one" aria-hidden="true"></div>
         <div class="hero-glow hero-glow-two" aria-hidden="true"></div>
         <div class="container hero-grid">
@@ -78,7 +78,7 @@
             </p>
             <div class="hero-actions">
               <a class="button button-primary" href="#como-funciona">
-                <span data-i18n="dashboardDemo">Ver Demo del Dashboard</span>
+                <span data-i18n="discoverHowItWorks">Conocer cómo funciona</span>
                 <svg viewBox="0 0 20 20" aria-hidden="true"><path d="m7 4 6 6-6 6M12.5 10H3"/></svg>
               </a>
               <a class="button button-outline" href="#app-movil" data-i18n="downloadApp">Descargar App Móvil (Offline)</a>
@@ -94,7 +94,7 @@
             <div class="orbit orbit-one" aria-hidden="true"></div>
             <div class="orbit orbit-two" aria-hidden="true"></div>
 
-            <article class="dashboard-preview" aria-label="Panel GIS multivariable">
+            <article class="dashboard-preview" id="dashboard-demo" aria-label="Panel GIS multivariable">
               <header class="preview-header">
                 <div>
                   <span class="window-dot"></span>
@@ -139,7 +139,7 @@
               </div>
             </article>
 
-            <article class="phone-preview" id="app-movil" aria-label="Aplicación móvil AuxIA en modo offline">
+            <article class="phone-preview" aria-label="Aplicación móvil AuxIA en modo offline">
               <div class="phone-speaker" aria-hidden="true"></div>
               <div class="phone-screen">
                 <div class="phone-status"><span>9:41</span><span>● ● ●</span></div>
@@ -198,14 +198,13 @@
           </div>
 
           <div class="module-grid">
-            <article class="module-card reveal">
+            <article class="module-card reveal" id="app-movil">
               <div class="module-icon icon-lime" aria-hidden="true">
                 <svg viewBox="0 0 48 48"><circle cx="24" cy="21" r="10"/><path d="M24 42S9 31.5 9 20a15 15 0 0 1 30 0c0 11.5-15 22-15 22Z"/></svg>
               </div>
               <span class="module-label label-lime" data-i18n="citizensField">Ciudadanos &amp; Campo</span>
               <h3 data-i18n="offlineReports">Reportes Offline-First</h3>
               <p data-i18n="offlineReportsText">Captura ubicaciones GPS y categorías de ayuda —Médico, Rescate, Víveres— sin señal celular, y sincroniza al reconectar.</p>
-              <a href="#app-movil"><span data-i18n="exploreModule">Explorar módulo</span><span aria-hidden="true">↗</span></a>
             </article>
 
             <article class="module-card reveal" data-reveal-delay="70">
@@ -215,7 +214,6 @@
               <span class="module-label label-blue" data-i18n="aiEngine">Motor IA</span>
               <h3 data-i18n="transparentPriority">Priorización Algorítmica Transparente</h3>
               <p data-i18n="transparentPriorityText">Explicabilidad del cálculo de urgencia en tiempo real para optimizar decisiones bajo estrés.</p>
-              <a href="#como-funciona"><span data-i18n="exploreModule">Explorar módulo</span><span aria-hidden="true">↗</span></a>
             </article>
 
             <article class="module-card reveal" data-reveal-delay="140" id="autoridades">
@@ -225,7 +223,6 @@
               <span class="module-label label-green" data-i18n="controlCenters">Centros de Control</span>
               <h3 data-i18n="gisPanel">Panel GIS Multivariable</h3>
               <p data-i18n="gisPanelText">Monitoreo geográfico centralizado, mapas de calor y gestión automatizada de inventarios de ayuda humanitaria.</p>
-              <a href="#despliegue"><span data-i18n="exploreModule">Explorar módulo</span><span aria-hidden="true">↗</span></a>
             </article>
 
             <article class="module-card reveal" data-reveal-delay="210" id="trazabilidad">
@@ -235,7 +232,6 @@
               <span class="module-label label-violet" data-i18n="transparency">Transparencia</span>
               <h3 data-i18n="immutableTrace">Trazabilidad Inmutable Blockchain</h3>
               <p data-i18n="immutableTraceText">Verificación del flujo de suministros desde el almacén hasta la entrega final al beneficiario.</p>
-              <a href="#como-funciona"><span data-i18n="exploreModule">Explorar módulo</span><span aria-hidden="true">↗</span></a>
             </article>
           </div>
         </div>
@@ -294,7 +290,7 @@
             </div>
             <div class="cta-actions">
               <a class="button button-night" href="#contacto" data-i18n="requestDeployment">Solicitar despliegue</a>
-              <a class="button button-night-outline" href="#contacto" data-i18n="talkTeam">Hablar con el equipo</a>
+              <a class="button button-night-outline" href="#como-funciona" data-i18n="reviewProcess">Revisar el proceso</a>
             </div>
           </aside>
         </div>
@@ -329,15 +325,15 @@
         <nav class="footer-column" aria-label="Recursos">
           <h2 data-i18n="resources">Recursos</h2>
           <a href="#como-funciona" data-i18n="productDemo">Demo del producto</a>
-          <a href="#solucion" data-i18n="siteMap">Mapa del sitio</a>
-          <a href="#inicio" data-i18n="systemStatus">Estado del sistema</a>
+          <span class="footer-pending" data-i18n="siteMap">Mapa del sitio · próximamente</span>
+          <span class="footer-pending" data-i18n="systemStatus">Estado del sistema · próximamente</span>
         </nav>
 
         <nav class="footer-column" aria-label="Legal" id="legal-note">
           <h2 data-i18n="legal">Legal</h2>
-          <a href="#legal-note" data-i18n="privacyTerms">Términos de privacidad</a>
-          <a href="#legal-note" data-i18n="useTerms">Términos de uso</a>
-          <a href="#legal-note" data-i18n="dataPolicy">Política de datos</a>
+          <span class="footer-pending" data-i18n="privacyTerms">Términos de privacidad · próximamente</span>
+          <span class="footer-pending" data-i18n="useTerms">Términos de uso · próximamente</span>
+          <span class="footer-pending" data-i18n="dataPolicy">Política de datos · próximamente</span>
         </nav>
 
         <aside class="emergency-card" aria-labelledby="emergency-title">
