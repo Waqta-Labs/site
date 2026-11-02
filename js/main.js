@@ -101,7 +101,7 @@ const translations = {
     rights: "Todos los derechos reservados.",
     openMenu: "Abrir menú",
     closeMenu: "Cerrar menú",
-    pageTitle: "AuxIA | Inteligencia para responder ante desastres",
+    pageTitle: "AuxIA | Respuesta inteligente",
     pageDescription: "AuxIA coordina la respuesta ante desastres con reportes offline-first, priorización explicable y trazabilidad Blockchain.",
     sosDemo: "Demostración del botón SOS",
     sosConfirmed: "Reporte de demostración guardado sin conexión"
@@ -208,7 +208,7 @@ const translations = {
     rights: "All rights reserved.",
     openMenu: "Open menu",
     closeMenu: "Close menu",
-    pageTitle: "AuxIA | Intelligence for disaster response",
+    pageTitle: "AuxIA | Intelligent response",
     pageDescription: "AuxIA coordinates disaster response through offline-first reports, explainable prioritization, and Blockchain traceability.",
     sosDemo: "SOS button demonstration",
     sosConfirmed: "Demo report saved offline"
