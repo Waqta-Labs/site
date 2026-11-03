@@ -4,6 +4,10 @@ Landing page institucional de AuxIA construida con HTML5, CSS3 y JavaScript
 nativo. Presenta la solución de respuesta ante desastres, sus módulos, el flujo
 operativo y los accesos institucionales definidos en el mockup del proyecto.
 
+## Versión
+
+La primera versión publicada de la landing page es `0.1.0`.
+
 ## Ejecutar localmente
 
 El proyecto no necesita dependencias ni compilación. Inicia cualquier servidor
