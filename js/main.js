@@ -102,7 +102,7 @@ const translations = {
     rights: "Todos los derechos reservados.",
     openMenu: "Abrir menú",
     closeMenu: "Cerrar menú",
-    pageTitle: "AuxIA | Respuesta inteligente",
+    pageTitle: "AuxIA",
     pageDescription: "AuxIA coordina la respuesta ante desastres con reportes offline-first, priorización explicable y trazabilidad Blockchain.",
     sosDemo: "Demostración del botón SOS",
     sosConfirmed: "Reporte de demostración guardado sin conexión",
@@ -214,7 +214,7 @@ const translations = {
     rights: "All rights reserved.",
     openMenu: "Open menu",
     closeMenu: "Close menu",
-    pageTitle: "AuxIA | Intelligent response",
+    pageTitle: "AuxIA",
     pageDescription: "AuxIA coordinates disaster response through offline-first reports, explainable prioritization, and Blockchain traceability.",
     sosDemo: "SOS button demonstration",
     sosConfirmed: "Demo report saved offline",
@@ -238,6 +238,8 @@ const actionToast = document.querySelector(".action-toast");
 
 let currentLanguage = "es";
 let toastTimer;
+let activeNavigationLock;
+let navigationLockTimer;
 
 function getStoredLanguage() {
   try {
@@ -315,6 +317,17 @@ document.querySelectorAll('a[href^="#"]:not(.skip-link)').forEach((link) => {
       : target.getBoundingClientRect().top + window.scrollY - headerOffset;
 
     history.pushState(null, "", link.getAttribute("href"));
+
+    if (link.classList.contains("nav-link")) {
+      activeNavigationLock = link;
+      setActiveNavigation(link);
+      window.clearTimeout(navigationLockTimer);
+      navigationLockTimer = window.setTimeout(() => {
+        activeNavigationLock = undefined;
+        updateActiveNavigation();
+      }, 1000);
+    }
+
     window.scrollTo({
       top: Math.max(0, targetTop),
       behavior: reducedMotion.matches ? "auto" : "smooth"
@@ -372,27 +385,12 @@ if ("IntersectionObserver" in window) {
 
 const navigationTargets = [...navLinks]
   .map((link) => ({ link, target: document.querySelector(link.getAttribute("href")) }))
-  .filter(({ target }) => target)
-  .sort(({ target: firstTarget }, { target: secondTarget }) => {
-    if (firstTarget === secondTarget) return 0;
-    return firstTarget.compareDocumentPosition(secondTarget) & Node.DOCUMENT_POSITION_FOLLOWING ? -1 : 1;
-  });
+  .filter(({ target }) => target);
 
-function updateActiveNavigation() {
-  const marker = window.scrollY + header.offsetHeight + 96;
-  let activeLink = navigationTargets[0]?.link;
+const appNavigationTarget = navigationTargets.find(({ link }) => link.getAttribute("href") === "#app-movil");
+const sectionNavigationTargets = navigationTargets.filter(({ link }) => link.getAttribute("href") !== "#app-movil");
 
-  navigationTargets.forEach(({ link, target }) => {
-    const targetTop = target.getBoundingClientRect().top + window.scrollY;
-    if (targetTop <= marker) {
-      activeLink = link;
-    }
-  });
-
-  if (window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 8) {
-    activeLink = navigationTargets.at(-1)?.link;
-  }
-
+function setActiveNavigation(activeLink) {
   navLinks.forEach((link) => {
     const isCurrent = link === activeLink;
     link.classList.toggle("is-active", isCurrent);
@@ -402,6 +400,43 @@ function updateActiveNavigation() {
       link.removeAttribute("aria-current");
     }
   });
+}
+
+function updateActiveNavigation() {
+  if (activeNavigationLock) {
+    setActiveNavigation(activeNavigationLock);
+    return;
+  }
+
+  const marker = window.scrollY + header.offsetHeight + 48;
+  const eligibleTargets = sectionNavigationTargets
+    .map(({ link, target }) => ({
+      link,
+      top: target.getBoundingClientRect().top + window.scrollY
+    }))
+    .filter(({ top }) => top <= marker);
+
+  let activeLink = eligibleTargets.reduce((closest, candidate) => {
+    if (!closest || candidate.top > closest.top) return candidate;
+    return closest;
+  }, undefined)?.link || sectionNavigationTargets[0]?.link;
+
+  const solutionTarget = document.querySelector("#solucion");
+  const solutionTop = solutionTarget.getBoundingClientRect().top + window.scrollY;
+  const isInsideHero = marker < solutionTop;
+  if (window.location.hash === "#app-movil" && isInsideHero) {
+    activeLink = appNavigationTarget?.link || activeLink;
+  }
+
+  if (window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 8) {
+    activeLink = sectionNavigationTargets.reduce((lowest, candidate) => {
+      const candidateTop = candidate.target.getBoundingClientRect().top + window.scrollY;
+      const lowestTop = lowest?.target.getBoundingClientRect().top + window.scrollY;
+      return lowestTop === undefined || candidateTop > lowestTop ? candidate : lowest;
+    }, undefined)?.link;
+  }
+
+  setActiveNavigation(activeLink);
 }
 
 window.addEventListener("scroll", updateActiveNavigation, { passive: true });
