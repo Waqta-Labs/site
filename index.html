@@ -34,9 +34,9 @@
         <nav class="primary-nav" id="primary-navigation" aria-label="Navegación principal">
           <a class="nav-link is-active" href="#inicio" data-i18n="navHome">Inicio</a>
           <a class="nav-link" href="#solucion" data-i18n="navSolution">Solución IA</a>
-          <a class="nav-link" href="#como-funciona" data-i18n="navHowItWorks">Cómo funciona</a>
-          <a class="nav-link" href="#despliegue" data-i18n="navOrganizations">Organizaciones</a>
-          <a class="nav-link" href="#contacto" data-i18n="navContact">Contacto</a>
+          <a class="nav-link" href="#despliegue" data-i18n="navAuthorities">Para Autoridades</a>
+          <a class="nav-link" href="#app-movil" data-i18n="navMobile">App Móvil</a>
+          <a class="nav-link" href="#trazabilidad" data-i18n="navTraceability">Trazabilidad</a>
         </nav>
 
         <div class="header-actions">
@@ -44,7 +44,7 @@
             <button class="language-button is-active" type="button" data-language="es" aria-pressed="true">ES</button>
             <button class="language-button" type="button" data-language="en" aria-pressed="false">EN</button>
           </div>
-          <a class="button button-lime header-cta" href="#dashboard-demo" data-i18n="commandCenter">Ver Centro de Mando</a>
+          <button class="button button-lime header-cta" type="button" data-message-key="commandCenterNotice" data-i18n="commandCenter">Acceso Centro de Mando</button>
           <button
             class="menu-toggle"
             type="button"
@@ -62,8 +62,6 @@
 
     <main id="main-content">
       <section class="hero section-shell" id="inicio" aria-labelledby="hero-title">
-        <div class="hero-glow hero-glow-one" aria-hidden="true"></div>
-        <div class="hero-glow hero-glow-two" aria-hidden="true"></div>
         <div class="container hero-grid">
           <div class="hero-copy reveal">
             <p class="eyebrow status-eyebrow">
@@ -79,23 +77,15 @@
               Conectamos la urgencia ciudadana en campo mediante reportes offline-first con tableros de mando inteligente, priorización algorítmica y trazabilidad inmutable por Blockchain.
             </p>
             <div class="hero-actions">
-              <a class="button button-primary" href="#como-funciona">
-                <span data-i18n="discoverHowItWorks">Conocer cómo funciona</span>
+              <a class="button button-primary" href="#dashboard-demo">
+                <span data-i18n="dashboardDemo">Ver Demo del Dashboard</span>
                 <svg viewBox="0 0 20 20" aria-hidden="true"><path d="m7 4 6 6-6 6M12.5 10H3"/></svg>
               </a>
-              <a class="button button-outline" href="#app-movil" data-i18n="downloadApp">Descargar App Móvil (Offline)</a>
-            </div>
-            <div class="hero-proof" aria-label="Principios de la solución">
-              <span><i aria-hidden="true"></i><b data-i18n="proofOffline">Opera sin señal</b></span>
-              <span><i aria-hidden="true"></i><b data-i18n="proofExplainable">IA explicable</b></span>
-              <span><i aria-hidden="true"></i><b data-i18n="proofAuditable">Entregas auditables</b></span>
+              <button class="button button-outline" type="button" data-message-key="appDownloadNotice" data-i18n="downloadApp">Descargar App Móvil (Offline)</button>
             </div>
           </div>
 
           <div class="hero-product reveal" data-reveal-delay="120" aria-label="Vista demostrativa del Centro de Mando y la aplicación AuxIA">
-            <div class="orbit orbit-one" aria-hidden="true"></div>
-            <div class="orbit orbit-two" aria-hidden="true"></div>
-
             <article class="dashboard-preview" id="dashboard-demo" aria-label="Panel GIS multivariable">
               <header class="preview-header">
                 <div>
@@ -141,7 +131,7 @@
               </div>
             </article>
 
-            <article class="phone-preview" aria-label="Aplicación móvil AuxIA en modo offline">
+            <article class="phone-preview" id="app-movil" aria-label="Aplicación móvil AuxIA en modo offline">
               <div class="phone-speaker" aria-hidden="true"></div>
               <div class="phone-screen">
                 <div class="phone-status"><span>9:41</span><span>● ● ●</span></div>
@@ -200,7 +190,7 @@
           </div>
 
           <div class="module-grid">
-            <article class="module-card reveal" id="app-movil">
+            <article class="module-card reveal">
               <div class="module-icon icon-lime" aria-hidden="true">
                 <svg viewBox="0 0 48 48"><circle cx="24" cy="21" r="10"/><path d="M24 42S9 31.5 9 20a15 15 0 0 1 30 0c0 11.5-15 22-15 22Z"/></svg>
               </div>
@@ -227,7 +217,7 @@
               <p data-i18n="gisPanelText">Monitoreo geográfico centralizado, mapas de calor y gestión automatizada de inventarios de ayuda humanitaria.</p>
             </article>
 
-            <article class="module-card reveal" data-reveal-delay="210" id="trazabilidad">
+            <article class="module-card reveal" data-reveal-delay="210">
               <div class="module-icon icon-violet" aria-hidden="true">
                 <svg viewBox="0 0 48 48"><rect x="7" y="16" width="20" height="16" rx="6"/><rect x="21" y="16" width="20" height="16" rx="6"/><path d="M19 24h10"/></svg>
               </div>
@@ -244,7 +234,6 @@
           <div class="section-heading centered reveal">
             <p class="eyebrow" data-i18n="howItWorks">CÓMO FUNCIONA</p>
             <h2 id="workflow-title" data-i18n="emergencyToDelivery">De la emergencia a la entrega validada</h2>
-            <p data-i18n="workflowIntro">Una secuencia conectada que conserva el contexto desde el primer reporte hasta la auditoría.</p>
           </div>
 
           <div class="workflow-grid">
@@ -271,7 +260,7 @@
               <p data-i18n="priorityAndAIText">El motor calcula el Urgency Score en tiempo real y explica los factores que lo componen.</p>
             </article>
 
-            <article class="workflow-card reveal" data-reveal-delay="180">
+            <article class="workflow-card reveal" data-reveal-delay="180" id="trazabilidad">
               <div class="workflow-topline"><span class="step-number step-green">03</span><i></i></div>
               <div class="mini-interface delivery-interface">
                 <div><strong data-i18n="delivery">Entrega #A-2041</strong><span data-i18n="validated">Validada</span></div>
@@ -286,13 +275,11 @@
           <aside class="deployment-cta reveal" id="despliegue" aria-labelledby="deployment-title">
             <div class="cta-rings" aria-hidden="true"></div>
             <div>
-              <p class="eyebrow dark" data-i18n="institutionalDeployment">DESPLIEGUE INSTITUCIONAL</p>
-              <h2 id="deployment-title" data-i18n="belongOrganization">¿Perteneces a un organismo de Defensa Civil o una ONG?</h2>
-              <p data-i18n="deployRegion">Conoce cómo AuxIA puede adaptarse a la coordinación de emergencias en tu región.</p>
+              <h2 id="deployment-title" data-i18n="belongOrganization">¿Perteneces a un organismo de Defensa Civil o ONG? Despliega AuxIA en tu región.</h2>
             </div>
             <div class="cta-actions">
-              <a class="button button-night" href="#contacto" data-i18n="requestDeployment">Solicitar despliegue</a>
-              <a class="button button-night-outline" href="#como-funciona" data-i18n="reviewProcess">Revisar el proceso</a>
+              <button class="button button-night" type="button" data-message-key="deploymentNotice" data-i18n="requestDeployment">Solicitar despliegue</button>
+              <button class="button button-night-outline" type="button" data-message-key="teamNotice" data-i18n="talkTeam">Hablar con el equipo</button>
             </div>
           </aside>
         </div>
@@ -326,16 +313,16 @@
 
         <nav class="footer-column" aria-label="Recursos">
           <h2 data-i18n="resources">Recursos</h2>
-          <a href="#como-funciona" data-i18n="productDemo">Demo del producto</a>
-          <span class="footer-pending" data-i18n="siteMap">Mapa del sitio · próximamente</span>
-          <span class="footer-pending" data-i18n="systemStatus">Estado del sistema · próximamente</span>
+          <span class="footer-pending" data-i18n="apiDocumentation">Documentación API</span>
+          <span class="footer-pending" data-i18n="siteMap">Mapa del sitio</span>
+          <span class="footer-pending" data-i18n="systemStatus">Estado del sistema</span>
         </nav>
 
         <nav class="footer-column" aria-label="Legal" id="legal-note">
           <h2 data-i18n="legal">Legal</h2>
-          <span class="footer-pending" data-i18n="privacyTerms">Términos de privacidad · próximamente</span>
-          <span class="footer-pending" data-i18n="useTerms">Términos de uso · próximamente</span>
-          <span class="footer-pending" data-i18n="dataPolicy">Política de datos · próximamente</span>
+          <span class="footer-pending" data-i18n="privacyTerms">Términos de privacidad</span>
+          <span class="footer-pending" data-i18n="useTerms">Términos de uso</span>
+          <span class="footer-pending" data-i18n="dataPolicy">Política de datos</span>
         </nav>
 
         <aside class="emergency-card" aria-labelledby="emergency-title">
@@ -355,5 +342,6 @@
         </div>
       </div>
     </footer>
+    <div class="action-toast" role="status" aria-live="polite" aria-atomic="true"></div>
   </body>
 </html>
