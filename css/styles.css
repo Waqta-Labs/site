@@ -32,7 +32,7 @@
 
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: 92px;
+  scroll-padding-top: 78px;
 }
 
 body {
@@ -99,7 +99,7 @@ b {
 }
 
 .container {
-  width: min(calc(100% - 40px), var(--container));
+  width: min(calc(100% - 120px), var(--container));
   margin-inline: auto;
 }
 
@@ -115,8 +115,10 @@ b {
 .deployment-cta,
 .site-footer,
 .module-card,
-.dashboard-preview {
-  scroll-margin-top: 96px;
+.dashboard-preview,
+.phone-preview,
+.workflow-card {
+  scroll-margin-top: 78px;
 }
 
 .section-dark {
@@ -271,7 +273,7 @@ b {
 .section-heading h2 {
   max-width: 840px;
   margin-bottom: 12px;
-  font-size: clamp(2rem, 4vw, 3.25rem);
+  font-size: clamp(1.9rem, 3vw, 2.5rem);
   line-height: 1.08;
 }
 
@@ -289,7 +291,7 @@ b {
   top: 0;
   right: 0;
   left: 0;
-  min-height: 76px;
+  min-height: 60px;
   border-bottom: 1px solid rgba(255, 255, 255, 0.07);
   background: rgba(33, 33, 97, 0.86);
   backdrop-filter: blur(18px);
@@ -303,7 +305,7 @@ b {
 
 .header-inner {
   display: flex;
-  min-height: 76px;
+  min-height: 60px;
   align-items: center;
   justify-content: space-between;
   gap: 28px;
@@ -347,7 +349,7 @@ b {
 
 .nav-link {
   position: relative;
-  padding-block: 26px;
+  padding-block: 18px;
   color: #c9cae6;
   font-size: 0.84rem;
   font-weight: 650;
@@ -358,7 +360,7 @@ b {
 .nav-link::after {
   position: absolute;
   right: 0;
-  bottom: 16px;
+  bottom: 9px;
   left: 0;
   height: 2px;
   background: var(--lime);
@@ -386,8 +388,8 @@ b {
 }
 
 .header-cta {
-  min-height: 42px;
-  padding: 10px 17px;
+  min-height: 34px;
+  padding: 8px 16px;
   font-size: 0.78rem;
 }
 
@@ -456,49 +458,17 @@ b {
 /* Hero */
 
 .hero {
-  min-height: 720px;
-  padding: 164px 0 96px;
+  min-height: 646px;
+  padding: 136px 0 62px;
   overflow: hidden;
-}
-
-.hero::before {
-  position: absolute;
-  z-index: -2;
-  inset: 0;
-  background-image: linear-gradient(rgba(133, 213, 246, 0.035) 1px, transparent 1px), linear-gradient(90deg, rgba(133, 213, 246, 0.035) 1px, transparent 1px);
-  background-size: 64px 64px;
-  content: "";
-  mask-image: linear-gradient(to bottom, transparent 0, black 30%, transparent 100%);
-}
-
-.hero-glow {
-  position: absolute;
-  z-index: -1;
-  width: 520px;
-  height: 520px;
-  border-radius: 50%;
-  filter: blur(100px);
-  opacity: 0.16;
-}
-
-.hero-glow-one {
-  top: 100px;
-  right: -130px;
-  background: var(--royal);
-}
-
-.hero-glow-two {
-  bottom: -250px;
-  left: 20%;
-  background: var(--sky);
-  opacity: 0.08;
+  background: radial-gradient(circle at 50% 108%, rgba(71, 80, 221, 0.26), transparent 32%), var(--night);
 }
 
 .hero-grid {
   display: grid;
-  grid-template-columns: minmax(0, 0.92fr) minmax(520px, 1.08fr);
+  grid-template-columns: minmax(0, 0.92fr) minmax(500px, 1.08fr);
   align-items: center;
-  gap: 58px;
+  gap: 28px;
 }
 
 .status-eyebrow {
@@ -526,7 +496,7 @@ b {
 .hero h1 {
   max-width: 640px;
   margin-bottom: 22px;
-  font-size: clamp(2.7rem, 4vw, 3.75rem);
+  font-size: clamp(2.7rem, 4vw, 3.3rem);
   line-height: 1.06;
 }
 
@@ -548,58 +518,16 @@ b {
   gap: 12px;
 }
 
-.hero-proof {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 16px 22px;
-  margin-top: 28px;
-  color: #d4d5e9;
-  font-size: 0.76rem;
-}
-
-.hero-proof span {
-  display: inline-flex;
-  align-items: center;
-  gap: 7px;
-}
-
-.hero-proof i {
-  width: 5px;
-  height: 5px;
-  background: var(--emerald);
-  border-radius: 50%;
-}
-
 .hero-product {
   position: relative;
-  min-height: 520px;
-}
-
-.orbit {
-  position: absolute;
-  border: 1px solid rgba(133, 213, 246, 0.1);
-  border-radius: 50%;
-}
-
-.orbit-one {
-  top: 18px;
-  right: 20px;
-  width: 470px;
-  height: 470px;
-}
-
-.orbit-two {
-  top: 68px;
-  right: 72px;
-  width: 370px;
-  height: 370px;
+  min-height: 450px;
 }
 
 .dashboard-preview {
   position: absolute;
   top: 50%;
   left: 0;
-  width: min(540px, 86%);
+  width: min(440px, 84%);
   overflow: hidden;
   border: 1px solid rgba(255, 255, 255, 0.16);
   background: #11142d;
@@ -610,7 +538,9 @@ b {
 }
 
 .dashboard-preview:target,
-.module-card:target {
+.phone-preview:target,
+.module-card:target,
+.workflow-card:target {
   border-color: var(--lime);
   box-shadow: 0 0 0 4px rgba(188, 251, 137, 0.12), var(--shadow-panel);
 }
@@ -666,7 +596,7 @@ b {
 .dashboard-body {
   display: grid;
   grid-template-columns: 44% 56%;
-  min-height: 330px;
+  min-height: 264px;
 }
 
 .priority-panel {
@@ -859,7 +789,7 @@ b {
   z-index: 3;
   top: 50%;
   right: 0;
-  width: 226px;
+  width: 205px;
   padding: 8px;
   border: 3px solid #0d1128;
   background: #080b1c;
@@ -881,7 +811,7 @@ b {
 }
 
 .phone-screen {
-  min-height: 430px;
+  min-height: 390px;
   padding: 18px 13px 14px;
   overflow: hidden;
   background: #25246a;
@@ -933,8 +863,8 @@ b {
 .sos-button {
   position: relative;
   display: flex;
-  width: 106px;
-  height: 106px;
+  width: 96px;
+  height: 96px;
   flex-direction: column;
   align-items: center;
   justify-content: center;
@@ -1030,7 +960,7 @@ b {
 
 .impact-strip {
   position: relative;
-  padding: 38px 0 54px;
+  padding: 27px 0 56px;
   background: var(--night);
 }
 
@@ -1052,8 +982,8 @@ b {
 
 .impact-card {
   position: relative;
-  min-height: 185px;
-  padding: 29px 30px;
+  min-height: 156px;
+  padding: 22px;
   border: 1px solid rgba(255, 255, 255, 0.08);
   background: var(--night-card);
   border-radius: var(--radius-md);
@@ -1099,7 +1029,7 @@ b {
 }
 
 .modules {
-  padding: 86px 0 104px;
+  padding: 44px 0 70px;
 }
 
 .module-grid {
@@ -1111,9 +1041,9 @@ b {
 .module-card {
   position: relative;
   display: flex;
-  min-height: 350px;
+  min-height: 248px;
   flex-direction: column;
-  padding: 26px;
+  padding: 20px;
   overflow: hidden;
   border: 1px solid rgba(126, 132, 255, 0.2);
   background: var(--night-soft);
@@ -1147,17 +1077,17 @@ b {
 
 .module-icon {
   display: grid;
-  width: 50px;
-  height: 50px;
-  margin-bottom: 18px;
+  width: 42px;
+  height: 42px;
+  margin-bottom: 13px;
   place-items: center;
   border: 1px solid currentColor;
   border-radius: 13px;
 }
 
 .module-icon svg {
-  width: 28px;
-  height: 28px;
+  width: 24px;
+  height: 24px;
   fill: none;
   stroke: currentColor;
   stroke-width: 2.6;
@@ -1183,7 +1113,7 @@ b {
 
 .module-label {
   align-self: flex-start;
-  margin-bottom: 14px;
+  margin-bottom: 12px;
   padding: 5px 10px;
   border-radius: 999px;
   font-size: 0.58rem;
@@ -1211,22 +1141,22 @@ b {
 }
 
 .module-card h3 {
-  margin-bottom: 12px;
-  font-size: 1.18rem;
+  margin-bottom: 10px;
+  font-size: 1.04rem;
   line-height: 1.2;
 }
 
 .module-card p {
-  margin-bottom: 20px;
+  margin-bottom: 0;
   color: #c2c3dd;
-  font-size: 0.86rem;
-  line-height: 1.62;
+  font-size: 0.76rem;
+  line-height: 1.5;
 }
 
 /* Workflow */
 
 .workflow {
-  padding: 92px 0 102px;
+  padding: 14px 0 27px;
 }
 
 .workflow-grid {
@@ -1236,8 +1166,8 @@ b {
 }
 
 .workflow-card {
-  min-height: 372px;
-  padding: 24px;
+  min-height: 287px;
+  padding: 20px;
   border: 1px solid rgba(255, 255, 255, 0.1);
   background: var(--night-card);
   border-radius: var(--radius-md);
@@ -1281,8 +1211,8 @@ b {
 }
 
 .mini-interface {
-  min-height: 126px;
-  margin-bottom: 20px;
+  min-height: 110px;
+  margin-bottom: 16px;
   padding: 16px;
   border: 1px solid rgba(255, 255, 255, 0.09);
   background: #191c39;
@@ -1394,14 +1324,14 @@ b {
 
 .workflow-card h3 {
   margin-bottom: 10px;
-  font-size: 1.22rem;
+  font-size: 1.08rem;
 }
 
 .workflow-card > p {
   margin-bottom: 0;
   color: var(--muted);
-  font-size: 0.84rem;
-  line-height: 1.62;
+  font-size: 0.75rem;
+  line-height: 1.5;
 }
 
 .deployment-cta {
@@ -1426,7 +1356,7 @@ b {
 .deployment-cta h2 {
   max-width: 690px;
   margin-bottom: 9px;
-  font-size: clamp(1.8rem, 3.4vw, 2.9rem);
+  font-size: clamp(1.7rem, 2.8vw, 2.25rem);
   line-height: 1.08;
 }
 
@@ -1448,14 +1378,14 @@ b {
 
 .cta-actions {
   display: grid;
-  min-width: 210px;
+  min-width: 172px;
   gap: 10px;
 }
 
 /* Footer */
 
 .site-footer {
-  padding: 68px 0 26px;
+  padding: 49px 0 22px;
   background: var(--forest);
 }
 
@@ -1463,11 +1393,24 @@ b {
   display: grid;
   grid-template-columns: 1.45fr repeat(3, 0.8fr) 1fr;
   gap: 40px;
-  padding-bottom: 48px;
+  padding-bottom: 35px;
 }
 
 .footer-logo {
-  margin-bottom: 20px;
+  width: fit-content;
+  flex-direction: column;
+  gap: 0;
+  margin-bottom: 14px;
+  text-align: center;
+}
+
+.footer-logo .brand-mark {
+  width: 42px;
+  height: 42px;
+}
+
+.footer-logo .brand-name {
+  font-size: 2rem;
 }
 
 .footer-logo .brand-name span,
@@ -1514,8 +1457,33 @@ b {
 }
 
 .footer-pending {
-  color: rgba(224, 242, 232, 0.58);
+  color: #e0f2e8;
   cursor: default;
+}
+
+.action-toast {
+  position: fixed;
+  z-index: 300;
+  right: 24px;
+  bottom: 24px;
+  max-width: min(380px, calc(100% - 32px));
+  padding: 14px 18px;
+  color: var(--night);
+  background: var(--lime);
+  border: 1px solid rgba(33, 33, 97, 0.14);
+  border-radius: 12px;
+  box-shadow: var(--shadow-panel);
+  font-size: 0.84rem;
+  font-weight: 700;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(14px);
+  transition: opacity var(--transition), transform var(--transition);
+}
+
+.action-toast.is-visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .emergency-card {
@@ -1633,7 +1601,7 @@ b {
   }
 
   .module-card {
-    min-height: 320px;
+    min-height: 270px;
   }
 
   .footer-grid {
@@ -1654,6 +1622,22 @@ b {
 }
 
 @media (max-width: 920px) {
+  html {
+    scroll-padding-top: 90px;
+  }
+
+  .hero,
+  .modules,
+  .workflow,
+  .deployment-cta,
+  .site-footer,
+  .module-card,
+  .dashboard-preview,
+  .phone-preview,
+  .workflow-card {
+    scroll-margin-top: 90px;
+  }
+
   .site-header {
     min-height: 72px;
   }
@@ -1791,28 +1775,9 @@ b {
     width: 100%;
   }
 
-  .hero-proof {
-    display: grid;
-    gap: 10px;
-  }
-
   .hero-product {
     min-height: 525px;
     margin-top: 8px;
-  }
-
-  .orbit-one {
-    top: 52px;
-    right: -85px;
-    width: 390px;
-    height: 390px;
-  }
-
-  .orbit-two {
-    top: 96px;
-    right: -42px;
-    width: 300px;
-    height: 300px;
   }
 
   .dashboard-preview {
@@ -1922,7 +1887,7 @@ b {
   }
 
   .module-card {
-    min-height: 315px;
+    min-height: 260px;
   }
 
   .workflow-grid {
@@ -1968,6 +1933,11 @@ b {
   .footer-bottom {
     align-items: flex-start;
     gap: 20px;
+  }
+
+  .action-toast {
+    right: 16px;
+    bottom: 16px;
   }
 }
 
