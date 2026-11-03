@@ -1,0 +1,347 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta
+      name="description"
+      content="AuxIA coordina la respuesta ante desastres con reportes offline-first, priorización explicable y trazabilidad Blockchain."
+    >
+    <meta name="theme-color" content="#212161">
+    <meta name="application-name" content="AuxIA">
+    <title>AuxIA</title>
+    <link rel="icon" href="assets/brand/favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="css/styles.css?v=20261103-2">
+    <script src="js/main.js?v=20261103-2" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content" data-i18n="skipLink">Ir al contenido principal</a>
+
+    <header class="site-header">
+      <div class="container header-inner">
+        <a class="brand" href="#inicio" aria-label="AuxIA, inicio">
+          <svg class="brand-mark" viewBox="0 0 48 48" aria-hidden="true">
+            <path d="M26.7 6.5A17.4 17.4 0 1 0 41.5 26h-13V6.5Z" fill="currentColor"/>
+            <circle cx="30" cy="22" r="4.2" fill="#212161"/>
+            <circle cx="21.5" cy="31" r="3.4" fill="#212161"/>
+            <circle cx="35.5" cy="32" r="4" fill="#85d5f6"/>
+            <path d="M18 13 11 6.5" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
+            <circle cx="9" cy="4.8" r="3" fill="currentColor"/>
+          </svg>
+          <span class="brand-name"><span>aux</span><strong>ia</strong></span>
+        </a>
+
+        <nav class="primary-nav" id="primary-navigation" aria-label="Navegación principal">
+          <a class="nav-link is-active" href="#inicio" data-i18n="navHome">Inicio</a>
+          <a class="nav-link" href="#solucion" data-i18n="navSolution">Solución IA</a>
+          <a class="nav-link" href="#despliegue" data-i18n="navAuthorities">Para Autoridades</a>
+          <a class="nav-link" href="#app-movil" data-i18n="navMobile">App Móvil</a>
+          <a class="nav-link" href="#trazabilidad" data-i18n="navTraceability">Trazabilidad</a>
+        </nav>
+
+        <div class="header-actions">
+          <div class="language-switcher" role="group" aria-label="Seleccionar idioma">
+            <button class="language-button is-active" type="button" data-language="es" aria-pressed="true">ES</button>
+            <button class="language-button" type="button" data-language="en" aria-pressed="false">EN</button>
+          </div>
+          <button class="button button-lime header-cta" type="button" data-message-key="commandCenterNotice" data-i18n="commandCenter">Acceso Centro de Mando</button>
+          <button
+            class="menu-toggle"
+            type="button"
+            aria-expanded="false"
+            aria-controls="primary-navigation"
+            aria-label="Abrir menú"
+          >
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <main id="main-content">
+      <section class="hero section-shell" id="inicio" aria-labelledby="hero-title">
+        <div class="container hero-grid">
+          <div class="hero-copy reveal">
+            <p class="eyebrow status-eyebrow">
+              <span class="status-dot" aria-hidden="true"></span>
+              <span data-i18n="heroEyebrow">IA + Blockchain · Respuesta ante desastres</span>
+            </p>
+            <h1 id="hero-title">
+              <span data-i18n="heroLineOne">Coordinación e</span>
+              <span class="text-lime" data-i18n="heroLineTwo">Inteligencia Artificial</span>
+              <span data-i18n="heroLineThree">al servicio de la respuesta ante desastres humanitarios.</span>
+            </h1>
+            <p class="hero-description" data-i18n="heroDescription">
+              Conectamos la urgencia ciudadana en campo mediante reportes offline-first con tableros de mando inteligente, priorización algorítmica y trazabilidad inmutable por Blockchain.
+            </p>
+            <div class="hero-actions">
+              <a class="button button-primary" href="#dashboard-demo">
+                <span data-i18n="dashboardDemo">Ver Demo del Dashboard</span>
+                <svg viewBox="0 0 20 20" aria-hidden="true"><path d="m7 4 6 6-6 6M12.5 10H3"/></svg>
+              </a>
+              <button class="button button-outline" type="button" data-message-key="appDownloadNotice" data-i18n="downloadApp">Descargar App Móvil (Offline)</button>
+            </div>
+          </div>
+
+          <div class="hero-product reveal" data-reveal-delay="120" aria-label="Vista demostrativa del Centro de Mando y la aplicación AuxIA">
+            <article class="dashboard-preview" id="dashboard-demo" aria-label="Panel GIS multivariable">
+              <header class="preview-header">
+                <div>
+                  <span class="window-dot"></span>
+                  <span class="window-dot"></span>
+                  <span class="window-dot"></span>
+                </div>
+                <strong data-i18n="dashboardTitle">Centro de Mando · Panel GIS</strong>
+                <span class="live-badge"><i></i><span data-i18n="live">EN VIVO</span></span>
+              </header>
+              <div class="dashboard-body">
+                <div class="priority-panel">
+                  <p><span data-i18n="priorityIA">Prioridad IA</span> · Urgency Score</p>
+                  <div class="priority-row priority-high">
+                    <span><b>Santa Rosa</b><small data-i18n="medical">Médico</small></span><strong>94</strong>
+                  </div>
+                  <div class="priority-row priority-medium">
+                    <span><b>Costa Verde</b><small data-i18n="rescue">Rescate</small></span><strong>87</strong>
+                  </div>
+                  <div class="priority-row priority-low">
+                    <span><b>Albergue Norte</b><small data-i18n="supplies">Víveres</small></span><strong>72</strong>
+                  </div>
+                  <div class="priority-row priority-last">
+                    <span><b>Sector 7</b><small data-i18n="supplies">Víveres</small></span><strong>58</strong>
+                  </div>
+                  <div class="explain-box">
+                    <span data-i18n="explainedBy">Explicada por</span>:
+                    <b data-i18n="riskFactors">3 niños · sin señal · acceso cortado</b>
+                  </div>
+                </div>
+                <div class="map-panel" aria-hidden="true">
+                  <div class="map-grid"></div>
+                  <span class="map-road road-one"></span>
+                  <span class="map-road road-two"></span>
+                  <span class="heat heat-lime"></span>
+                  <span class="heat heat-blue"></span>
+                  <span class="heat heat-green"></span>
+                  <span class="map-pin pin-one"></span>
+                  <span class="map-pin pin-two"></span>
+                  <span class="map-pin pin-three"></span>
+                  <span class="map-caption" data-i18n="heatMap">Mapa de calor · Demanda de auxilio</span>
+                </div>
+              </div>
+            </article>
+
+            <article class="phone-preview" id="app-movil" aria-label="Aplicación móvil AuxIA en modo offline">
+              <div class="phone-speaker" aria-hidden="true"></div>
+              <div class="phone-screen">
+                <div class="phone-status"><span>9:41</span><span>● ● ●</span></div>
+                <div class="offline-badge"><i></i><span data-i18n="offlineMode">Modo Offline Activo</span></div>
+                <h2 data-i18n="urgentHelp">Solicitar Auxilio Urgente</h2>
+                <p data-i18n="oneTapNoSignal">Un toque. No necesitas señal.</p>
+                <button class="sos-button" type="button" aria-label="Demostración del botón SOS">
+                  <span>SOS</span>
+                  <small data-i18n="oneTap">1 TOQUE</small>
+                </button>
+                <div class="help-types">
+                  <span data-i18n="medical">Médico</span>
+                  <span data-i18n="rescue">Rescate</span>
+                  <span data-i18n="supplies">Víveres</span>
+                </div>
+                <div class="sync-card">
+                  <span>GPS -12.0464, -77.0428 · <b data-i18n="saved">guardado</b></span>
+                  <strong><span data-i18n="queuedReports">3 reportes en cola</span> · <span data-i18n="syncOnConnect">sincroniza al conectar</span></strong>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="impact-strip" aria-labelledby="impact-title">
+        <h2 class="sr-only" id="impact-title" data-i18n="impactTitle">Impacto esperado de la solución</h2>
+        <div class="container impact-grid">
+          <article class="impact-card reveal">
+            <span class="impact-line lime"></span>
+            <strong class="text-lime" data-i18n="minutes">Minutos</strong>
+            <h3 data-i18n="responseTime">Tiempo de respuesta reducido a minutos</h3>
+            <p data-i18n="responseTimeText">De horas de coordinación manual a decisiones en tiempo real.</p>
+          </article>
+          <article class="impact-card reveal" data-reveal-delay="80">
+            <span class="impact-line blue"></span>
+            <strong class="text-blue">Score IA</strong>
+            <h3 data-i18n="explainableScore">Score de Urgencia IA explicable</h3>
+            <p data-i18n="explainableScoreText">Cada puntaje muestra por qué una solicitud va primero.</p>
+          </article>
+          <article class="impact-card reveal" data-reveal-delay="160">
+            <span class="impact-line green"></span>
+            <strong class="text-green">100%</strong>
+            <h3 data-i18n="verifiedDeliveries">Entregas verificadas en Blockchain</h3>
+            <p data-i18n="verifiedDeliveriesText">Del almacén al beneficiario, sin registros alterables.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="modules section-dark" id="solucion" aria-labelledby="modules-title">
+        <div class="container">
+          <div class="section-heading reveal">
+            <p class="eyebrow" data-i18n="keyModules">MÓDULOS CLAVE</p>
+            <h2 id="modules-title" data-i18n="oneSystem">Un solo sistema para cada actor de la crisis</h2>
+            <p data-i18n="oneSystemText">Desde el ciudadano sin señal hasta el centro de mando: cuatro módulos conectados que priorizan, despachan y verifican.</p>
+          </div>
+
+          <div class="module-grid">
+            <article class="module-card reveal">
+              <div class="module-icon icon-lime" aria-hidden="true">
+                <svg viewBox="0 0 48 48"><circle cx="24" cy="21" r="10"/><path d="M24 42S9 31.5 9 20a15 15 0 0 1 30 0c0 11.5-15 22-15 22Z"/></svg>
+              </div>
+              <span class="module-label label-lime" data-i18n="citizensField">Ciudadanos &amp; Campo</span>
+              <h3 data-i18n="offlineReports">Reportes Offline-First</h3>
+              <p data-i18n="offlineReportsText">Captura ubicaciones GPS y categorías de ayuda —Médico, Rescate, Víveres— sin señal celular, y sincroniza al reconectar.</p>
+            </article>
+
+            <article class="module-card reveal" data-reveal-delay="70">
+              <div class="module-icon icon-blue" aria-hidden="true">
+                <svg viewBox="0 0 48 48"><path d="M12 34V23M24 34V12M36 34V19"/><rect x="8" y="22" width="8" height="16" rx="4"/><rect x="20" y="8" width="8" height="30" rx="4"/><rect x="32" y="17" width="8" height="21" rx="4"/></svg>
+              </div>
+              <span class="module-label label-blue" data-i18n="aiEngine">Motor IA</span>
+              <h3 data-i18n="transparentPriority">Priorización Algorítmica Transparente</h3>
+              <p data-i18n="transparentPriorityText">Explicabilidad del cálculo de urgencia en tiempo real para optimizar decisiones bajo estrés.</p>
+            </article>
+
+            <article class="module-card reveal" data-reveal-delay="140" id="autoridades">
+              <div class="module-icon icon-green" aria-hidden="true">
+                <svg viewBox="0 0 48 48"><rect x="9" y="9" width="12" height="12" rx="3"/><rect x="27" y="9" width="12" height="12" rx="3"/><rect x="9" y="27" width="12" height="12" rx="3"/><rect x="27" y="27" width="12" height="12" rx="3"/></svg>
+              </div>
+              <span class="module-label label-green" data-i18n="controlCenters">Centros de Control</span>
+              <h3 data-i18n="gisPanel">Panel GIS Multivariable</h3>
+              <p data-i18n="gisPanelText">Monitoreo geográfico centralizado, mapas de calor y gestión automatizada de inventarios de ayuda humanitaria.</p>
+            </article>
+
+            <article class="module-card reveal" data-reveal-delay="210">
+              <div class="module-icon icon-violet" aria-hidden="true">
+                <svg viewBox="0 0 48 48"><rect x="7" y="16" width="20" height="16" rx="6"/><rect x="21" y="16" width="20" height="16" rx="6"/><path d="M19 24h10"/></svg>
+              </div>
+              <span class="module-label label-violet" data-i18n="transparency">Transparencia</span>
+              <h3 data-i18n="immutableTrace">Trazabilidad Inmutable Blockchain</h3>
+              <p data-i18n="immutableTraceText">Verificación del flujo de suministros desde el almacén hasta la entrega final al beneficiario.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="workflow section-shell" id="como-funciona" aria-labelledby="workflow-title">
+        <div class="container">
+          <div class="section-heading centered reveal">
+            <p class="eyebrow" data-i18n="howItWorks">CÓMO FUNCIONA</p>
+            <h2 id="workflow-title" data-i18n="emergencyToDelivery">De la emergencia a la entrega validada</h2>
+          </div>
+
+          <div class="workflow-grid">
+            <article class="workflow-card reveal">
+              <div class="workflow-topline"><span class="step-number step-lime">01</span><i></i></div>
+              <div class="mini-interface report-interface">
+                <div><span class="mini-pill" data-i18n="medical">Médico</span><small>GPS -12.046, -77.043</small></div>
+                <strong><i></i><span data-i18n="savedOffline">Guardado sin conexión</span></strong>
+                <p><span data-i18n="queuedReports">3 reportes en cola</span> · <span data-i18n="syncOnConnect">sincroniza al conectar</span></p>
+              </div>
+              <h3 data-i18n="fieldReport">Reporte en Campo</h3>
+              <p data-i18n="fieldReportText">El ciudadano o brigadista envía su ubicación GPS y categoría de ayuda con un toque, incluso sin señal.</p>
+            </article>
+
+            <article class="workflow-card reveal" data-reveal-delay="90">
+              <div class="workflow-topline"><span class="step-number step-blue">02</span><i></i></div>
+              <div class="mini-interface score-interface">
+                <div class="score-head"><span>Urgency Score</span><strong>94</strong></div>
+                <label><span data-i18n="vulnerablePeople">Personas vulnerables</span><i style="--progress: 88%"></i></label>
+                <label><span data-i18n="timeWithoutHelp">Tiempo sin asistencia</span><i style="--progress: 74%"></i></label>
+                <label><span data-i18n="access">Acceso</span><i style="--progress: 54%"></i></label>
+              </div>
+              <h3 data-i18n="priorityAndAI">Priorización e IA</h3>
+              <p data-i18n="priorityAndAIText">El motor calcula el Urgency Score en tiempo real y explica los factores que lo componen.</p>
+            </article>
+
+            <article class="workflow-card reveal" data-reveal-delay="180" id="trazabilidad">
+              <div class="workflow-topline"><span class="step-number step-green">03</span><i></i></div>
+              <div class="mini-interface delivery-interface">
+                <div><strong data-i18n="delivery">Entrega #A-2041</strong><span data-i18n="validated">Validada</span></div>
+                <code>0x7f3a...c91e</code>
+                <p><span data-i18n="warehouse">Almacén</span> → <span data-i18n="brigade">Brigada</span> → <span data-i18n="beneficiary">Beneficiario</span></p>
+              </div>
+              <h3 data-i18n="dispatchDelivery">Despacho y Entrega Validada</h3>
+              <p data-i18n="dispatchDeliveryText">El centro asigna inventario y ruta; cada entrega queda registrada de forma inmutable en Blockchain.</p>
+            </article>
+          </div>
+
+          <aside class="deployment-cta reveal" id="despliegue" aria-labelledby="deployment-title">
+            <div class="cta-rings" aria-hidden="true"></div>
+            <div>
+              <h2 id="deployment-title" data-i18n="belongOrganization">¿Perteneces a un organismo de Defensa Civil o ONG? Despliega AuxIA en tu región.</h2>
+            </div>
+            <div class="cta-actions">
+              <button class="button button-night" type="button" data-message-key="deploymentNotice" data-i18n="requestDeployment">Solicitar despliegue</button>
+              <button class="button button-night-outline" type="button" data-message-key="teamNotice" data-i18n="talkTeam">Hablar con el equipo</button>
+            </div>
+          </aside>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer" id="contacto">
+      <div class="container footer-grid">
+        <div class="footer-brand">
+          <a class="brand footer-logo" href="#inicio" aria-label="AuxIA, volver al inicio">
+            <svg class="brand-mark" viewBox="0 0 48 48" aria-hidden="true">
+              <path d="M26.7 6.5A17.4 17.4 0 1 0 41.5 26h-13V6.5Z" fill="currentColor"/>
+              <circle cx="30" cy="22" r="4.2" fill="#094542"/>
+              <circle cx="21.5" cy="31" r="3.4" fill="#094542"/>
+              <circle cx="35.5" cy="32" r="4" fill="#bcfb89"/>
+              <path d="M18 13 11 6.5" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
+              <circle cx="9" cy="4.8" r="3" fill="currentColor"/>
+            </svg>
+            <span class="brand-name"><span>aux</span><strong>ia</strong></span>
+          </a>
+          <p data-i18n="footerDescription">Plataforma inteligente para coordinar la respuesta ante desastres y la ayuda humanitaria.</p>
+        </div>
+
+        <nav class="footer-column" aria-label="Producto">
+          <h2 data-i18n="product">Producto</h2>
+          <a href="#solucion" data-i18n="navSolution">Solución IA</a>
+          <a href="#autoridades" data-i18n="navAuthorities">Para Autoridades</a>
+          <a href="#app-movil" data-i18n="navMobile">App Móvil</a>
+          <a href="#trazabilidad" data-i18n="navTraceability">Trazabilidad</a>
+        </nav>
+
+        <nav class="footer-column" aria-label="Recursos">
+          <h2 data-i18n="resources">Recursos</h2>
+          <span class="footer-pending" data-i18n="apiDocumentation">Documentación API</span>
+          <span class="footer-pending" data-i18n="siteMap">Mapa del sitio</span>
+          <span class="footer-pending" data-i18n="systemStatus">Estado del sistema</span>
+        </nav>
+
+        <nav class="footer-column" aria-label="Legal" id="legal-note">
+          <h2 data-i18n="legal">Legal</h2>
+          <span class="footer-pending" data-i18n="privacyTerms">Términos de privacidad</span>
+          <span class="footer-pending" data-i18n="useTerms">Términos de uso</span>
+          <span class="footer-pending" data-i18n="dataPolicy">Política de datos</span>
+        </nav>
+
+        <aside class="emergency-card" aria-labelledby="emergency-title">
+          <h2 id="emergency-title" data-i18n="emergencyContacts">Contactos de emergencia</h2>
+          <a href="tel:115"><span data-i18n="civilDefense">Defensa Civil</span><strong>115</strong></a>
+          <a href="tel:116"><span data-i18n="firefighters">Bomberos</span><strong>116</strong></a>
+          <a href="tel:106"><span>SAMU</span><strong>106</strong></a>
+        </aside>
+      </div>
+
+      <div class="container footer-bottom">
+        <p>© <span id="current-year">2026</span> AuxIA. <span data-i18n="rights">Todos los derechos reservados.</span></p>
+        <div class="footer-languages" aria-label="Idiomas disponibles">
+          <button type="button" data-language="es">ES</button>
+          <span aria-hidden="true">·</span>
+          <button type="button" data-language="en">EN</button>
+        </div>
+      </div>
+    </footer>
+    <div class="action-toast" role="status" aria-live="polite" aria-atomic="true"></div>
+  </body>
+</html>
