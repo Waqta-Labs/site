@@ -61,6 +61,10 @@ const translations = {
     transparency: "Transparencia",
     immutableTrace: "Trazabilidad Inmutable Blockchain",
     immutableTraceText: "Verificación del flujo de suministros desde el almacén hasta la entrega final al beneficiario.",
+    aboutProduct: "CONOCE AUXIA",
+    aboutProductTitle: "AuxIA en una emergencia, de punta a punta",
+    aboutProductText: "Del SOS sin señal a la entrega verificada en Blockchain: mira cómo ciudadanos, brigadas y autoridades trabajan en un mismo sistema.",
+    aboutProductVideoTitle: "Video About-the-Product de AuxIA",
     howItWorks: "CÓMO FUNCIONA",
     emergencyToDelivery: "De la emergencia a la entrega validada",
     workflowIntro: "Una secuencia conectada que conserva el contexto desde el primer reporte hasta la auditoría.",
@@ -106,8 +110,6 @@ const translations = {
     pageDescription: "AuxIA coordina la respuesta ante desastres con reportes offline-first, priorización explicable y trazabilidad Blockchain.",
     sosDemo: "Demostración del botón SOS",
     sosConfirmed: "Reporte de demostración guardado sin conexión",
-    commandCenterNotice: "El acceso al Centro de Mando estará disponible próximamente.",
-    appDownloadNotice: "La descarga de la app móvil estará disponible próximamente.",
     deploymentNotice: "El canal de solicitud de despliegue estará disponible próximamente.",
     teamNotice: "El canal para hablar con el equipo estará disponible próximamente."
   },
@@ -173,6 +175,10 @@ const translations = {
     transparency: "Transparency",
     immutableTrace: "Immutable Blockchain Traceability",
     immutableTraceText: "Verification of supply movement from the warehouse to final delivery to the beneficiary.",
+    aboutProduct: "MEET AUXIA",
+    aboutProductTitle: "AuxIA through an emergency, end to end",
+    aboutProductText: "From an SOS sent without signal to a delivery verified on Blockchain: see how citizens, brigades, and authorities work in one system.",
+    aboutProductVideoTitle: "AuxIA About-the-Product video",
     howItWorks: "HOW IT WORKS",
     emergencyToDelivery: "From emergency to validated delivery",
     workflowIntro: "A connected sequence that preserves context from the first report through the audit.",
@@ -218,8 +224,6 @@ const translations = {
     pageDescription: "AuxIA coordinates disaster response through offline-first reports, explainable prioritization, and Blockchain traceability.",
     sosDemo: "SOS button demonstration",
     sosConfirmed: "Demo report saved offline",
-    commandCenterNotice: "Command Center access will be available soon.",
-    appDownloadNotice: "The mobile app download will be available soon.",
     deploymentNotice: "The deployment request channel will be available soon.",
     teamNotice: "The team contact channel will be available soon."
   }
@@ -270,6 +274,13 @@ function setLanguage(language) {
     const key = element.dataset.i18n;
     if (dictionary[key]) {
       element.textContent = dictionary[key];
+    }
+  });
+
+  document.querySelectorAll("[data-i18n-title]").forEach((element) => {
+    const key = element.dataset.i18nTitle;
+    if (dictionary[key]) {
+      element.setAttribute("title", dictionary[key]);
     }
   });
 

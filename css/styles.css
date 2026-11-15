@@ -1153,6 +1153,32 @@ b {
   line-height: 1.5;
 }
 
+/* About-the-Product video */
+
+.product-video {
+  padding: 70px 0 64px;
+  scroll-margin-top: 78px;
+}
+
+.video-frame {
+  position: relative;
+  max-width: 960px;
+  margin-inline: auto;
+  overflow: hidden;
+  aspect-ratio: 16 / 9;
+  border: 1px solid var(--border);
+  background: #000;
+  border-radius: var(--radius-lg);
+}
+
+.video-frame iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
 /* Workflow */
 
 .workflow {
@@ -1628,6 +1654,7 @@ b {
 
   .hero,
   .modules,
+  .product-video,
   .workflow,
   .deployment-cta,
   .site-footer,
@@ -1735,6 +1762,14 @@ b {
 @media (max-width: 640px) {
   .container {
     width: min(calc(100% - 32px), var(--container));
+  }
+
+  .product-video {
+    padding: 48px 0 40px;
+  }
+
+  .video-frame {
+    border-radius: var(--radius-md);
   }
 
   .brand-mark {
